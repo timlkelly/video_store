@@ -63,3 +63,6 @@ group :test do
 end
 
 gem "faker"
+
+gem "graphql"
+gem "graphiql-rails", group: :development
