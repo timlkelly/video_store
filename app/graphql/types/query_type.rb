@@ -15,6 +15,13 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    field :movies,
+      resolver: Resolvers::MovieResolver,
+      description: 'Returns a Movie listing'
+
+    def movies
+      Movie.all
+    end
 
     def node(id:)
       context.schema.object_from_id(id, context)
