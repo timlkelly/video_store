@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class VideoStoreSchema < GraphQL::Schema
+  max_complexity 400
+  max_depth 15
+
   mutation(Types::MutationType)
   query(Types::QueryType)
 

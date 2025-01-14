@@ -2,6 +2,8 @@
 
 module Types
   class MutationType < Types::BaseObject
+    description 'The Root Mutation Type'
+
     # TODO: remove me
     field :test_field, String, null: false,
       description: "An example field added by the generator"
