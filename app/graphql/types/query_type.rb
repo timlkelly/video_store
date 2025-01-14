@@ -15,8 +15,14 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    # Movie Query without pagination
+    # field :movies,
+    #   resolver: Resolvers::MovieResolver,
+    #   description: 'Returns a Movie listing'
+
+    # Movie Query with Relay/Connection pagination
     field :movies,
-      resolver: Resolvers::MovieResolver,
+      Types::Movies::Movie.connection_type,
       description: 'Returns a Movie listing'
 
     def movies

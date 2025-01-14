@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class VideoStoreSchema < GraphQL::Schema
+  default_max_page_size 10
   max_complexity 400
   max_depth 15
 
