@@ -1,5 +1,7 @@
 # README
 
+## Setup
+
 Prepare the local database:
 
 ```bash
@@ -13,3 +15,11 @@ bin/rails s
 ```
 
 Navigate to `localhost:3000/graphiql`
+
+## Schema
+
+To update generated schema:
+
+```bash
+bin/rails graphql:schema:dump
+```
