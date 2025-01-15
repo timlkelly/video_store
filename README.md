@@ -2,19 +2,13 @@
 
 ## Setup
 
-Prepare the local database:
-
 ```bash
-bin/rails db:create db:migrate db:seed
+bin/setup
 ```
 
-Start rails server
+## GraphiQL
 
-```bash
-bin/rails s
-```
-
-Navigate to `localhost:3000/graphiql`
+Start the Rails server and navigate to `localhost:3000/graphiql`
 
 ## Schema
 
