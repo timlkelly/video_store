@@ -4,20 +4,19 @@ class ServiceResponse
     SUCCESS = :success
   end
 
-  def self.error(message: nil, errors: {}, payload: {})
-    new(status: Status::ERROR, message: message, errors: errors, payload: payload)
+  def self.error(message: nil, payload: {})
+    new(status: Status::ERROR, message: message, payload: payload)
   end
 
   def self.success(message: nil , payload: {})
     new(status: Status::SUCCESS, message: message, payload: payload)
   end
 
-  attr_reader :status, :message, :errors, :payload
+  attr_reader :status, :message, :payload
 
-  def initialize(status:, message: nil, errors: {}, payload: {})
+  def initialize(status:, message: nil, payload: {})
     @status = status
     @message = message
-    @errors = errors
     @payload = payload
   end
 
@@ -27,5 +26,11 @@ class ServiceResponse
 
   def error?
     status == Status::ERROR
+  end
+
+  def errors
+    return [] unless error?
+
+    Array.wrap(message)
   end
 end

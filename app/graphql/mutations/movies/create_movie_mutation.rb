@@ -28,7 +28,7 @@ module Mutations
         response = CreateNewMovie.call(genre: genre, title: title)
 
         {
-          errors: [response.message].compact,
+          errors: response.errors,
           movie: response.payload
         }
       end
