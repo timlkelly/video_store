@@ -25,6 +25,14 @@ module Types
       Types::Movies::Movie.connection_type,
       description: 'Returns a Movie listing'
 
+    field :movie, Types::Movies::Movie do
+      argument :id, ID, required: true
+    end
+
+    def movie(id:)
+      ::Movie.find_by!(id: id)
+    end
+
     def movies
       Movie.all
     end
